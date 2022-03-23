@@ -16,7 +16,7 @@ namespace ConsoleApp2
         private String nome;
         private int idade;
         private char sexo;
-        private float saldoBancario;
+        private double saldoBancario;
 
         // Metodo getter para retorno do valor referente a idade do objeto Pessoa
         public int getIdade()
@@ -52,7 +52,7 @@ namespace ConsoleApp2
             this.saldoBancario = 0;
         }
 
-        protected void receberDinheiro(float dinheiro)
+        protected void receberDinheiro(double dinheiro)
         {
             this.saldoBancario += dinheiro;
         }

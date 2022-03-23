@@ -13,10 +13,10 @@ namespace ConsoleApp2
      class FuncionarioTerceirizado : Pessoa
     {
         private int horasTrabalhadas = 0;
-        private float valorPorHora = 0;
+        private double valorPorHora = 0;
 
 
-        public FuncionarioTerceirizado(float valorHora, int cpf, String nome, int idade, char sexo) : base(cpf, nome, idade, sexo)
+        public FuncionarioTerceirizado(double valorHora, int cpf, String nome, int idade, char sexo) : base(cpf, nome, idade, sexo)
         {
             this.valorPorHora = valorHora;
         }

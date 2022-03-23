@@ -18,7 +18,7 @@ namespace ConsoleApp2
         private int idFuncionario;  //Identificador do funcionario
         
         private static int proximoId = 0; // Atribute estático inacessível fora da classe (encapsulamento)
-        private float salarioMensal;
+        private double salarioMensal;
         private int anoDeContratacao;
 
         // Através do encapsulamento eu garanto a segurança de meus dados que não poderão ser alterados
@@ -27,15 +27,15 @@ namespace ConsoleApp2
 
 
         // Construtor
-        public FuncionarioMensal(float salario, int ano, int cpf, String nome, int idade, char sexo) : base(cpf, nome, idade, sexo)
+        public FuncionarioMensal(double salario, int ano, int cpf, String nome, int idade, char sexo) : base(cpf, nome, idade, sexo)
         {
             this.salarioMensal = salario;
             this.anoDeContratacao = ano;
             this.setId();
         }
 
-        // Método inacessível fora da classe (encapsulamento)
-        private void setId()
+     
+        private void setId()    // Método inacessível fora da classe (encapsulamento)
         {
             this.idFuncionario = proximoId++;
         }
