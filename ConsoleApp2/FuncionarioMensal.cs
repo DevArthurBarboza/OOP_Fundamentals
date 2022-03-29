@@ -27,7 +27,7 @@ namespace ConsoleApp2
 
 
         // Construtor
-        public FuncionarioMensal(double salario, int ano, int cpf, String nome, int idade, char sexo) : base(cpf, nome, idade, sexo)
+        public FuncionarioMensal(double salario, int ano, String cpf, String nome, int idade, char sexo) : base(cpf, nome, idade, sexo)
         {
             this.salarioMensal = salario;
             this.anoDeContratacao = ano;

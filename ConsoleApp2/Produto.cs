@@ -23,8 +23,14 @@ namespace ConsoleApp2
         
         }
 
+        public String getNome()
+        {
+            return this.nome;
+        }
+
         public void vender() {
-            if (--this.quantidade == 0)
+            this.quantidade--;
+            if (this.quantidade == 0)
             {
                 this.emEstoque = false;
                 this.disponivel = false;
@@ -38,10 +44,9 @@ namespace ConsoleApp2
             this.quantidade += produtos;
         }
 
-        public float getValor()
+        public double getValor()
         {
             return this.valor;
         }
-
     }
 }

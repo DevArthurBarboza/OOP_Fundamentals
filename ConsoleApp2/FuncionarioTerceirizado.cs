@@ -16,7 +16,7 @@ namespace ConsoleApp2
         private double valorPorHora = 0;
 
 
-        public FuncionarioTerceirizado(double valorHora, int cpf, String nome, int idade, char sexo) : base(cpf, nome, idade, sexo)
+        public FuncionarioTerceirizado(double valorHora, String cpf, String nome, int idade, char sexo) : base(cpf, nome, idade, sexo)
         {
             this.valorPorHora = valorHora;
         }

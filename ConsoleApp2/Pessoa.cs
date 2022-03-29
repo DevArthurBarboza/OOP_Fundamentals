@@ -12,7 +12,7 @@ namespace ConsoleApp2
     {
 
         // Atributos
-        private int cpf; // Identificador de pessoa (esse atributo não deve repetir)
+        private String cpf; // Identificador de pessoa (esse atributo não deve repetir)
         private String nome;
         private int idade;
         private char sexo;
@@ -22,6 +22,16 @@ namespace ConsoleApp2
         public int getIdade()
         {
             return this.idade;
+        }
+
+        public String getNome()
+        {
+            return this.nome;
+        }
+
+        public String getCpf()
+        {
+            return this.cpf;
         }
 
 
@@ -43,7 +53,7 @@ namespace ConsoleApp2
             return "Seu saldo total é de : R$" + this.saldoBancario;
         }
 
-        public Pessoa(int cpf, String nome, int idade, char sexo)
+        public Pessoa(String cpf, String nome, int idade, char sexo)
         {
             this.cpf = cpf;
             this.nome = nome;

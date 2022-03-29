@@ -9,8 +9,9 @@ namespace ConsoleApp2
     class Vendedor : Pessoa
     {
 
-        private double comissao = 0.30 ;
-        public Vendedor(int cpf, String nome, int idade, char sexo, double comissao) : base(cpf, nome,idade,sexo)
+        private double comissao;
+        private int numeroDeVendas;
+        public Vendedor(String cpf, String nome, int idade, char sexo, double comissao = 0.3) : base(cpf, nome,idade,sexo)
         {
             this.comissao = comissao;
         }
@@ -19,6 +20,15 @@ namespace ConsoleApp2
         {
             produto.vender();
             this.receberDinheiro(produto.getValor() * this.comissao);
+        }
+
+        private void aumentarVendas()
+        {
+            this.numeroDeVendas++;
+            if(this.numeroDeVendas == 10)
+            {
+                this.comissao = 0.5;
+            }
         }
 
     }
