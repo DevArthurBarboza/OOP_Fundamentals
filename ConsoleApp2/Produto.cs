@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    class Produto
+    class Produto : Descritivel
     {
         private bool emEstoque = true;
         private bool disponivel = true;
@@ -15,12 +15,27 @@ namespace ConsoleApp2
         private string descricao;
         private double valor;
 
+
         public Produto(string nome, string descricao, double valor)
         {
             this.nome = nome;
             this.descricao = descricao;
             this.valor = valor;
         
+        }
+
+        public Produto(string nome, string descricao, double valor, int qntd)
+        {
+            this.nome = nome;
+            this.descricao = descricao;
+            this.valor = valor;
+            this.quantidade = qntd;
+
+        }
+
+        public String getDescricao()
+        {
+            return "\nproduto: " + nome + " descrição: " + descricao + " valor: R$" + valor + " quantidade: " + quantidade + " em estoque : " + emEstoque ;
         }
 
         public String getNome()

@@ -12,7 +12,7 @@ namespace ConsoleApp2
 
     //Logo todos os atributos e métodos presentes na classe Pessoa também se fazem presente
     //na classe funcionário, de modo que possamos reaproveitar o código e evitar repetições desnecessárias
-    class FuncionarioMensal : Pessoa
+    class FuncionarioMensal : Pessoa, Descritivel
     {
         
         private int idFuncionario;  //Identificador do funcionario
@@ -34,7 +34,14 @@ namespace ConsoleApp2
             this.setId();
         }
 
-     
+        public String getDescricao()
+        {
+            return "\nNome: " + this.getNome() + " cpf: " + this.getCpf() + " saldo: R$" + this.getSaldo() + " identificador de funcionário mensal : "  + this.idFuncionario + " salário mensal: R$" + this.salarioMensal + " ano de contratação: " + anoDeContratacao ;
+
+        }
+
+
+
         private void setId()    // Método inacessível fora da classe (encapsulamento)
         {
             this.idFuncionario = proximoId++;

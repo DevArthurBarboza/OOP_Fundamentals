@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    class Comprador : Pessoa
+    class Comprador : Pessoa, Descritivel
     {
 
         public String produtoComprado;
@@ -14,13 +14,27 @@ namespace ConsoleApp2
 
         public Comprador(String nome, char sexo, String cpf, int idade) : base(cpf, nome, idade, sexo)
         {
+            
+
 
         }
 
-        public void Comprar(Produto prodObj)
+       
+
+
+
+        public String getDescricao()
         {
+            return "\nNome: " + this.getNome() + " cpf: " + this.getCpf()+ " saldo: R$" + this.getSaldo() + " produto comprado: " + produtoComprado + " quantidade do produto " + quantidade;
+        }
+
+        public void comprar(Produto prodObj, Vendedor vendedorObj)
+        {
+
+            vendedorObj.vender(prodObj);
+
             this.produtoComprado = prodObj.getNome();
-            prodObj.vender();
+
             if(prodObj.getNome() == this.produtoComprado)
             {
                 this.quantidade++;

@@ -8,7 +8,7 @@ namespace ConsoleApp2
 {
 
     //Classe pessoa
-    class Pessoa
+    abstract class Pessoa  
     {
 
         // Atributos
@@ -16,7 +16,8 @@ namespace ConsoleApp2
         private String nome;
         private int idade;
         private char sexo;
-        private double saldoBancario;
+        private double saldoBancario = 100;
+
 
         // Metodo getter para retorno do valor referente a idade do objeto Pessoa
         public int getIdade()
@@ -34,6 +35,8 @@ namespace ConsoleApp2
             return this.cpf;
         }
 
+       
+
 
         // Metodo setter que utiliza de parâmetros para "setar" a idade do objeto Pessoa
         public void setIdade(int novaIdade)
@@ -48,9 +51,9 @@ namespace ConsoleApp2
             return "Seu novo nome é: " + this.nome;
         }
 
-        public String getSaldo()
+        public double getSaldo()
         {
-            return "Seu saldo total é de : R$" + this.saldoBancario;
+            return this.saldoBancario;
         }
 
         public Pessoa(String cpf, String nome, int idade, char sexo)
