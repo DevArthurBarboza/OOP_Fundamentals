@@ -8,8 +8,7 @@ namespace ConsoleApp2
 {
     class Produto : Descritivel
     {
-        private bool emEstoque = true;
-        private bool disponivel = true;
+        public String status = "disponivel";
         private int quantidade = 1;
         private string nome;
         private string descricao;
@@ -35,7 +34,7 @@ namespace ConsoleApp2
 
         public String getDescricao()
         {
-            return "\nproduto: " + nome + " descrição: " + descricao + " valor: R$" + valor + " quantidade: " + quantidade + " em estoque : " + emEstoque ;
+            return "\n - produto: " + this.nome + " - descrição: " + this.descricao + " - valor: R$" + this.valor + " - quantidade: " + this.quantidade + " - status : " +  this.status;
         }
 
         public String getNome()
@@ -43,20 +42,32 @@ namespace ConsoleApp2
             return this.nome;
         }
 
-        public void vender() {
-            this.quantidade--;
-            if (this.quantidade == 0)
+        public bool vender() {
+            if (this.quantidade > 0)
             {
-                this.emEstoque = false;
-                this.disponivel = false;
+                this.quantidade--;
+                if (this.quantidade == 0)
+                {
+                    this.status = "indisponivel";
 
+
+                } else 
+                {
+                    this.status = "disponivel";
+                }
+                return true;
             }
-            
+            return false;
+           
         }
 
         public void encherEstoque(int produtos)
         {
             this.quantidade += produtos;
+            if(this.quantidade > 0)
+            {
+                this.status = "disponivel";
+            }
         }
 
         public double getValor()

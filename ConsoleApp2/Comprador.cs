@@ -25,24 +25,22 @@ namespace ConsoleApp2
 
         public String getDescricao()
         {
-            return "\nNome: " + this.getNome() + " cpf: " + this.getCpf()+ " saldo: R$" + this.getSaldo() + " produto comprado: " + produtoComprado + " quantidade do produto " + quantidade;
+            return "\n- Nome: " + this.getNome() + " - cpf: " + this.getCpf()+ " - saldo: R$" + this.getSaldo() + " - produto comprado: " + produtoComprado + " - quantidade do produto " + quantidade;
         }
 
         public void comprar(Produto prodObj, Vendedor vendedorObj)
         {
-
-            vendedorObj.vender(prodObj);
-
-            this.produtoComprado = prodObj.getNome();
-
-            if(prodObj.getNome() == this.produtoComprado)
+            if (vendedorObj.vender(prodObj))
             {
-                this.quantidade++;
-            } else
-            {
-                this.quantidade = 1;
+                this.produtoComprado = prodObj.getNome();
+                if(prodObj.getNome() == this.produtoComprado)
+                {
+                    this.quantidade++;
+                } else
+                {
+                    this.quantidade = 1;
+                }
             }
-
         }
     }
 }

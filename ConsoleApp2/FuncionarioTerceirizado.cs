@@ -42,7 +42,7 @@ namespace ConsoleApp2
 
         public String getDescricao()
         {
-            return "\nNome: " + this.getNome() + " cpf: " + this.getCpf() + " saldo: R$ " + this.getSaldo() + " horas trabalhadas : " + this.horasTrabalhadas + " valor por hora: " + this.valorPorHora;
+            return "\n - Nome: " + this.getNome() + " - cpf: " + this.getCpf() + " - saldo: R$ " + this.getSaldo() + " - horas trabalhadas : " + this.horasTrabalhadas + " - valor por hora: " + this.valorPorHora;
         }
     }
 }

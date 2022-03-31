@@ -17,11 +17,15 @@ namespace ConsoleApp2
 
         }
 
-        public void vender(Produto produto)
+        public bool vender(Produto produto)
         {
-            produto.vender();
-            this.receberDinheiro(produto.getValor() * this.comissao);
-            this.aumentarVendas();
+            if (produto.vender())
+            {
+                this.receberDinheiro(produto.getValor() * this.comissao);
+                this.aumentarVendas();
+                return true;
+            }
+            return false;
         }
 
         private void aumentarVendas()
@@ -33,14 +37,14 @@ namespace ConsoleApp2
             }
         }
 
-        public int getComissao()
+        public String getComissao()
         {
-            return (int)(comissao * 100);
+            return comissao * 100 + "%";
         }
 
         public String getDescricao()
         {
-            return "\nNome: " + this.getNome() + " cpf: " + this.getCpf() + " saldo: R$" + this.getSaldo() + " comissão: " + (this.comissao * 100) + " número de vendas: " + numeroDeVendas;
+            return "\n - Nome: " + this.getNome() + " - cpf: " + this.getCpf() + " - saldo: R$" + this.getSaldo() + " - comissão: " + this.getComissao() + " - número de vendas: " + numeroDeVendas;
         }
 
 

@@ -11,11 +11,11 @@ namespace ConsoleApp2
             Descritivel[] objs = new Descritivel[5];
 
             // Instâncias de classes abaixo
-            Vendedor vendedorObj = new Vendedor("02", "Roberto", 30, 'm');
+            Vendedor vendedorObj = new Vendedor("07580705940", "Roberto", 30, 'm');
             Produto produtoObj = new Produto("mesa", "mesa de madeira", 30.99, 5);
-            FuncionarioTerceirizado funcionarioTerceirizadoObj = new FuncionarioTerceirizado(50, "01", "João", 20, 'm');
-            FuncionarioMensal funcionarioMensalObj = new FuncionarioMensal(3000, 2018, "03", "Rafaela", 25, 'f');
-            Comprador compradorObj = new Comprador("Pedrinho", 'm', "04", 45);
+            FuncionarioTerceirizado funcionarioTerceirizadoObj = new FuncionarioTerceirizado(50, "02989217920", "João", 20, 'm');
+            FuncionarioMensal funcionarioMensalObj = new FuncionarioMensal(3000, 2018, "21939516920", "Rafaela", 25, 'f');
+            Comprador compradorObj = new Comprador("Pedrinho", 'm', "51937916982", 45);
 
             compradorObj.comprar(produtoObj, vendedorObj);
             funcionarioTerceirizadoObj.somarHoras(20);
@@ -32,7 +32,7 @@ namespace ConsoleApp2
 
             for (int i = 0; i < objs.Length; i++)
             {
-                
+
                 Console.WriteLine(objs[i].getDescricao());
             }
 
